@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk add --no-cache bash bash-completion gawk sed grep bc coreutils curl nano git py-pip jq
+RUN apk add --no-cache bash bash-completion gawk sed grep bc coreutils curl nano git openssh-client py-pip jq
 
 RUN pip install awscli && \
     echo "complete -C '$(which aws_completer)' aws" >> ~/.bashrc
