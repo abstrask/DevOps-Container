@@ -13,7 +13,7 @@ RUN curl -L https://releases.hashicorp.com/terraform/0.11.7/terraform_0.11.7_lin
 
 RUN curl -L https://github.com/gruntwork-io/terragrunt/releases/download/v0.16.8/terragrunt_linux_amd64 -o terragrunt && \
     chmod +x terragrunt && \
-    mv terragrunt /usr/local/bi
+    mv terragrunt /usr/local/bin/
 
 RUN curl -L https://storage.googleapis.com/kubernetes-release/release/v1.8.4/bin/linux/amd64/kubectl -o kubectl && \
     chmod +x kubectl && \
@@ -39,6 +39,6 @@ RUN echo '"\e[1;5C": forward-word   # ctrl + right' >> ~/.inputrc && \
 
 RUN mkdir ~/code
 
-WORKDIR ~/code
+WORKDIR /root/code
 
-ENTRYPOINT [ "bash" ]
+ENTRYPOINT [ "/bin/bash" ]
